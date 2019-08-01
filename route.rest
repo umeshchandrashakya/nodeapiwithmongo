@@ -8,3 +8,25 @@ Content-Type: application/json
     "name":"ravi",
     "subscribeToChannel":"web dev satisfied"
 }
+###
+POST http://localhost:3000/students
+Content-Type: application/json
+
+{
+    "FirstName":"Anmol",
+    "LastName":"Sharma",
+    "SNO":"6",
+    "Age":"30",
+    "address":{
+        "address":"sultanpur road",
+        "City":"lucknow",
+        "Country":"India",
+        "Picode":"207504" 
+        }
+    }
+
+###
+GET http://localhost:3000/students
+
+###
+DELETE http://localhost:3000/students/deleteAllStudent                                                                                                                         

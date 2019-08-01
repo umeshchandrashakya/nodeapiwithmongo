@@ -10,6 +10,8 @@ db.once("open", () => console.log("connected to database"));
 app.use(express.json());
 
 const subscribers1 = require("./routes/subscribers");
+const students = require("./routes/students")
 app.use("/subscribers", subscribers1);
+app.use("/students",students);
 
 app.listen(3000, () => console.log("server started"));

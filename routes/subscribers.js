@@ -6,7 +6,9 @@ const subscriber = require("../models/subscriber");
 
 router.get("/", async (req, res, next) => {
   try {
-    const subscribes = await subscriber.find();
+    const subscribes = await subscriber.find({
+      "name": "ajeet kumar"
+    });
     res.json(subscribes);
   } catch (error) {
     res.status(5000).json({ message: error.message });
@@ -14,7 +16,9 @@ router.get("/", async (req, res, next) => {
 });
 
 //get by id
-router.get("/:id", (req, res, next) => {});
+router.get("/:id", (req, res, next) => {
+  
+});
 
 router.post("/", async (req, res, next) => {
   const newsubscriber = new subscriber({
