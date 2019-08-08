@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 
+//User Signup
+
 router.post("/signup", (req, res, next) => {
   User.find({ email: req.body.email })
     .exec()
@@ -37,4 +39,18 @@ router.post("/signup", (req, res, next) => {
     });
 });
 
+//User Login
+router.post("/login", (req, res, next) => {
+  User.find({ email: req.body.email })
+    .exec()
+    .then(user => {
+      if (user.length < 1) {
+        res.status(401).json({ message: "Auth falid" });
+      } else {
+      }
+    })
+    .catch(err => {
+      res.status(500).json({ error: err });
+    });
+});
 module.exports = router;
