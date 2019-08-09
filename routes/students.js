@@ -35,8 +35,16 @@ router.get("/", async (req, res, next) => {
       }catch(error){
 
       }
-  
-  })
+  });
 
+  router.post("/getStudentByName",async(req,res,next)=>{
+    try {
+      const FirstName = req.body.FirstName;
+      const studentByName = await students.find({"FirstName":FirstName},{"FirstName":1,"LastName":1, "address.City":1,"address.Country":1});
+      res.json(studentByName);
+    } catch (error) {
+      
+    }
+  });
 
 module.exports = router;

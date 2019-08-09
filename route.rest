@@ -13,20 +13,27 @@ POST http://localhost:3000/students
 Content-Type: application/json
 
 {
-    "FirstName":"Anmol",
-    "LastName":"Sharma",
+    "FirstName":"Raj",
+    "LastName":"Singh",
     "SNO":"6",
-    "Age":"30",
+    "Age":"32",
     "address":{
         "address":"sultanpur road",
         "City":"lucknow",
         "Country":"India",
         "Picode":"207504" 
         }
-    }
+       }
       
 ###
 GET http://localhost:3000/students
 
 ###
-DELETE http://localhost:3000/students/deleteAllStudent                                                                                                                         
+DELETE http://localhost:3000/students/deleteAllStudent    
+###
+POST http://localhost:3000/students/getStudentByName   
+Content-Type: application/json
+
+{
+    "FirstName":"Raj"
+}

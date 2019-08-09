@@ -15,3 +15,4 @@ app.use("/subscribers", subscribers1);
 app.use("/students",students);
 
 app.listen(3000, () => console.log("server started"));
+ 
