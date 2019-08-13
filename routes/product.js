@@ -14,10 +14,8 @@ cb(null,new Date().toDateString()+file.originalname);
 }
 });
 
-
-
+//add product api
 const upload = multer({storage: storage});
-
 router.post('/addproduct', upload.single('prodcutImage'),auth, async(req,res,next)=>{
   console.log(req.file);
      const newProduct = new Products({
@@ -27,9 +25,47 @@ router.post('/addproduct', upload.single('prodcutImage'),auth, async(req,res,nex
         });
         try {
          const productAdded = await newProduct.save();
-         res.send({data:productAdded})
+        return res.send({data:productAdded});
         } catch (error) {
-          console.log(error)
+          console.log(error);
         }
     });
+
+
+  //update product Api
+router.post('/updateproduct',auth,async(req,res,next)=>{
+  try {
+   
+    const updatedProduct = await Products.updateOne(
+      {_id:(req.body._id)},
+      {$set:{productName:"ProductOne"}}
+    );
+    return res.send({message:'Product updated',data:updatedProduct})
+  } catch (error) {
+    console.log(error)
+  }
+})
+
+//find all product
+router.get('/allproduct',async(req,res,next)=>{
+  try {
+  const allProduct = await Products.find({});
+  res.json({data:allProduct});
+} catch (error) {
+  console.log(error)
+}
+})
+
+router.get('/',async(req,res,next)=>{
+try {
+
+   let productId = (req.param('id'))
+    const productById = await Products.findById(productId);
+    res.send({data:productById});
+} catch (error) {
+  console.log(error);
+}
+
+});
+
 module.exports = router;
