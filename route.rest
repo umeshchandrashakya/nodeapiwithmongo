@@ -11,12 +11,13 @@ Content-Type: application/json
 ###
 POST http://localhost:3000/students
 Content-Type: application/json
-
+Authorization: Bera
 {
     "FirstName":"Raj",
     "LastName":"Singh",
     "SNO":"6",
     "Age":"32",
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVtZXNoMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZDRkMzcxNmYxY2U4YjNjMmM0NmIxNjQiLCJpYXQiOjE1NjU1OTE4NTQsImV4cCI6MTU2NTU5NTQ1NH0.e5GNjuRQWzYGqwvWIox8Tn_wPz9nEMH-iqY5cejdOYI",
     "address":{
         "address":"sultanpur road",
         "City":"lucknow",
@@ -36,4 +37,34 @@ Content-Type: application/json
 
 {
     "FirstName":"Raj"
+}
+
+###
+POST http://localhost:3000/user/signup 
+Content-Type: application/json
+
+{
+    "email":"umesh1@gmail.com",
+    "password":"umesh123"
+}
+
+###
+POST http://localhost:3000/user/login 
+Content-Type: application/json
+
+{
+    "email":"umesh1@gmail.com",
+    "password":"umesh123"
+}
+
+
+###
+POST http://localhost:3000/products/addproduct
+Content-Type: application/json
+
+{
+    "productName":"Product1",
+    "prodcutImage":"fdlwlfklwekflewkl",
+    "price":"200",
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVtZXNoMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZDRkMzcxNmYxY2U4YjNjMmM0NmIxNjQiLCJpYXQiOjE1NjU2MDExMDgsImV4cCI6MTU2NTYwNDcwOH0.srFNPDFuauaCiLG-MtiLN1k_VqR5EAyBrHU0xro9Hn8"
 }

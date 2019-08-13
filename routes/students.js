@@ -1,6 +1,7 @@
 const experess = require("express");
 const router = experess.Router();
 const students = require("../models/students");
+const checkAuth = require('../middleware/check-auth');
 
 router.get("/", async (req, res, next) => {
     try {
@@ -11,7 +12,7 @@ router.get("/", async (req, res, next) => {
     }
   });
 
-  router.post("/", async (req, res, next) => {
+  router.post("/",  async (req, res, next) => {
       console.log(req.body.address);
        const newStudents = new students({
       FirstName: req.body.FirstName,
@@ -37,7 +38,7 @@ router.get("/", async (req, res, next) => {
       }
   });
 
-  router.post("/getStudentByName",async(req,res,next)=>{
+  router.post("/getStudentByName",checkAuth,async(req,res,next)=>{
     try {
       const FirstName = req.body.FirstName;
       const studentByName = await students.find({"FirstName":FirstName},{"FirstName":1,"LastName":1, "address.City":1,"address.Country":1});
