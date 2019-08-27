@@ -32,7 +32,6 @@ router.post('/addproduct', upload.single('prodcutImage'),auth, async(req,res,nex
     });
 
 
-  //update product Api
 router.post('/updateproduct',auth,async(req,res,next)=>{
   try {
    

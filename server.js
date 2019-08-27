@@ -1,16 +1,16 @@
 require("dotenv").config();
 const express = require("express");
+const dbconfig = require('./dbconfig')
 const app = express();
-const bodyParser     = require('body-parser');
+
 
 
 const mongoose = require("mongoose");
-mongoose.connect(process.env.DATA_BASE_URL, { useNewUrlParser: true });
-const db = mongoose.connection;
-db.on("error", error => console.error(error));
-db.once("open", () => console.log("connected to database"));
 
-app.use(bodyParser.urlencoded({ extended: true }));
+//connect to mongo db
+dbconfig.getConnection();
+
+
 app.use(express.urlencoded());
 
 app.use(express.json());

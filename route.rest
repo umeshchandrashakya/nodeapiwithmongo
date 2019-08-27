@@ -66,5 +66,5 @@ Content-Type: application/json
     "productName":"Product1",
     "prodcutImage":"fdlwlfklwekflewkl",
     "price":"200",
-    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVtZXNoMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZDRkMzcxNmYxY2U4YjNjMmM0NmIxNjQiLCJpYXQiOjE1NjU2MDExMDgsImV4cCI6MTU2NTYwNDcwOH0.srFNPDFuauaCiLG-MtiLN1k_VqR5EAyBrHU0xro9Hn8"
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVtZXNoMUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1ZDRkMzcxNmYxY2U4YjNjMmM0NmIxNjQiLCJpYXQiOjE1NjYyMTAwMjQsImV4cCI6MTU2NjIxMzYyNH0.C68fIpCyvi9URliri2vmdhjDxtbrpXyObD_r2Bgqes4"
 }
