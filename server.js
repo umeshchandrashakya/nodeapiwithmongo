@@ -23,13 +23,18 @@ mongoose.Promise = global.Promise;
 const subscribers1 = require("./routes/subscribers");
 const students = require("./routes/students");
 const userRoute = require("./routes/user");
-const productRouter = require("./routes/product")
+const productRouter = require("./routes/product");
+const postRouter = require("./routes/post");
+const commentRouter = require("./routes/comment");
 
 
 app.use("/subscribers", subscribers1);
 app.use("/students", students);
 app.use("/user", userRoute);
 app.use("/products",productRouter);
+app.use("/post",postRouter);
+//app.use("/comment",commentRouter);
+
 
 app.listen(3000, () => console.log("server started"));
  
